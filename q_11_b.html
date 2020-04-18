@@ -1,0 +1,59 @@
+<html>
+	<head> 
+	<title> Total Cost </title>
+	<script type="text/javascript" >
+	var fruitname=['Apple', 'Orange', 'Banana'];
+	var fruit=[0,0,0];
+	var total=0;
+	function select_check(x)
+	{
+	if(fruit[x]==0)
+	{
+		if(x==0)
+		{
+			var c= parseInt(document.getElementById("apple").value);
+			fruit[x]= fruit[x]+c;
+			document.getElementById("apple1").innerHTML="No. of apples selected are"+c;
+		}
+		if(x==1)
+		{
+			var c= parseInt(document.getElementById("orange").value);
+			fruit[x]= fruit[x]+c;
+			document.getElementById("orange1").innerHTML="No. of apples selected are"+c;
+		}
+		if(x==2)
+		{
+			var c= parseInt(document.getElementById("banana").value);
+			fruit[x]= fruit[x]+c;
+			document.getElementById("banana1".innerHTML)="No. of apples selected are"+c;
+		}
+		
+	}
+	else{
+		fruit[x]=0;
+		document.getElementById.innerHTML("text"+x)="";
+	}
+	total=fruit[0]*0.59+fruit[1]*0.49+fruit[2]*0.39;
+	document.getElementById("total").innerHTML= "Total is "+total;
+}
+function submitted()
+{
+	total= total+0.05*total;
+	alert("The total amount is"+total);
+}
+	</script>
+	</head>
+	<body>
+		<h1> Fruits </h1>
+		<form>
+			Apple<input type="text" id="apple" name="cf" onchange="select_check(0);"/>  <br />
+			Orange<input type="text" id="orange" name="cf" onchange="select_check(1);"/>  <br />
+		 Banana<input type="text" id="banana" name="cf" onchange="select_check(2);"/> <br />
+		<input type="button" value="SUBMIT" onclick="submitted()">  </input><br/>
+		<p id="apple1"> </p>
+		<p id="orange1"> </p>
+		<p id="banana1"> </p>
+		<p id="total"> </p>
+		</form>
+	</body>
+</html>

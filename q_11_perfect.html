@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html>
+<head>
+<title>Untitled Page</title>
+<script type="text/javascript">
+ var fruit = [0, 0, 0];
+var fruitName = ['Apple ', 'Orange ', 'Banana ']; var total;
+
+function fn(x) {
+fruit[x] = parseInt(document.getElementById("fru" + x).value); if (!fruit[x] || fruit[x]<0 || fruit[x]>99)
+document.getElementById("text" + x).innerHTML = "Enter a Number b/w 0 to 99";
+else
+document.getElementById("text"+x).innerHTML ="No of "+fruitName[x
+]+ "selected : "+fruit[x];
+total = (fruit[0] * 59 + fruit[1] * 49 + fruit[2] * 39)/100; document.getElementById("tot").innerHTML = "Total cost = $"+total;
+}
+function sub() {
+total = (fruit[0] * 0.59 + fruit[1] * 0.49 + fruit[2] * 0.39)*1.05; alert("Total cost with 5% tax : $" + total);
+}
+</script>
+</head>
+<body>
+<h1>Fruits</h1>
+ 
+<form>
+<input type="text" name="ap" onchange ="fn(0);" id="fru0" size="1"/> Apple 59 cents<br />
+<input type="text" name="ap" onchange ="fn(1);" id="fru1" size="1" /> Orange
+49 cents<br />
+<input type="text" name="ap" onchange ="fn(2);" id="fru2" size="1" /> Banana
+39 cents<br />
+<br /><input type="button" value="Submit!" onclick="sub();"/>
+<br /><br />
+<p id="tot"></p>
+<p id="text0"></p>
+<p id="text1"></p>
+<p id="text2"></p>
+
+</form>
+</body>
+</html>

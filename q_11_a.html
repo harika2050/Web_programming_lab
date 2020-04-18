@@ -1,0 +1,42 @@
+<html>
+	<head> 
+	<title> Total Cost </title>
+	<script type="text/javascript" >
+	var fruitname=['Apple', 'Orange', 'Banana'];
+var fruit=[0,0,0];
+var total=0;
+function select_check(x)
+{
+	if(fruit[x]==0)
+	{
+		fruit[x]=1;
+		document.getElementById("text"+x).innerHTML=fruitname[x]+" is selected";
+	}
+	else{
+		fruit[x]=0;
+		document.getElementById.innerHTML("text"+x)="";
+	}
+	total=fruit[0]*0.59+fruit[1]*0.49+fruit[2]*0.39;
+	document.getElementById("total").innerHTML= "Total is "+total;
+}
+function submitted()
+{
+	total= total+0.05*total;
+	alert("The total amount is"+total);
+}
+	</script>
+	</head>
+	<body>
+		<h1> Fruits </h1>
+		<form>
+			<input type="checkbox" name="cf" onclick="select_check(0)"/> Apple <br />
+			<input type="checkbox" name="cf" onclick="select_check(1)"/> Orange <br />
+		<input type="checkbox" name="cf" onclick="select_check(2)"/> Banana <br />
+		<input type="button" value="SUBMIT" onclick="submitted()">  </input><br/>
+		<p id="text0"> </p>
+		<p id="text1"> </p>
+		<p id="text2"> </p>
+		<p id="total"> </p>
+		</form>
+	</body>
+</html>
